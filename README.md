@@ -10,7 +10,7 @@ The Repository is structured in the following way:
 # Datasets
 The AqSolDB(1) was used as the primary dataset. Further preprocessing was undertaken to remove extreme datapoints that were not relevant to drug discovery. Compounds with a MW > 1000 were removed, and only compounds within a -11 to +11 logP range were considered. 
 
-A validation dataset was curated from a model by Fioressi et al.(2) was curated using the same algorimth used on the AqSolDB(3) to remove dupliates, validate the solubiltiy datapoints and gorup them based on the standard deviation.  
+A validation dataset was curated from a model by Fioressi et al.(2) was curated using the same algorimth used on the AqSolDB(3) to remove dupliates, validate the solubiltiy datapoints and gorup them based on their standard deviation.  
 
 # Descriptors
 The physiochemical descriptors, molecular weight (MolWT), lipophilcity (logP), aromatic proportion (AP) and rotatable bonds (RB) from the ESOL model (Delaney at el.) were used as a benchmark model. 
