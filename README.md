@@ -1,7 +1,8 @@
 # AqSolMol
 The Aqua-Solubility Modelling (AqSolMol) Repository contains the python code for an undergraduate research project at the University of Nottingham on aqueous solubility modelling using vectorial and graphical kernels for SVM. For any queries, please contact either myself (Phil Wroe) or Joe Redshaw, the contact details for both can be found below:
-      # pcypw2@nottingham.ac.uk
-      # psxjr4@nottingham.ac.uk
+
+  pcypw2@nottingham.ac.uk
+  psxjr4@nottingham.ac.uk
 
 The Repository is structured in the following way:
 
@@ -29,8 +30,12 @@ To reference this any of the results include in this github, please use the foll
 Wroe P., Redshaw J., Hirst J. Evaluation of Vectorial and Graphical Kernel Method Performance on Aqueous Solubility Predictions. Nottingham J. Chem. (2021). 
 
 # References
-#(1) Sorkun, M.C., Khetan, A. & Er, S. AqSolDB, a curated reference set of aqueous solubility and 2D descriptors for a diverse set of compounds. Sci Data 6, 143 ##(2019).
-#(2)Fioressi S.E., Bacelo D.E., Aranda J.F. & Duchowicz P.R. Prediction of the aqueous solubility of diverse compounds by 2D-QSPR. J. Mol. Liq., 302, 112572 (2020).
-#(3) https://codeocean.com/capsule/8848590/tree/v1
-#(4) Delaney J.S. ESOL: Estimating Aqueous Solubility Directly from Molecular Structure. J. Chem. Inf. Model, 44(3), 1000-1005 (2004).
-#(5)https://ysig.github.io/GraKeL/0.1a8/index.html
+(1) Sorkun, M.C., Khetan, A. & Er, S. AqSolDB, a curated reference set of aqueous solubility and 2D descriptors for a diverse set of compounds. Sci Data 6, 143 ##(2019).
+
+(2)Fioressi S.E., Bacelo D.E., Aranda J.F. & Duchowicz P.R. Prediction of the aqueous solubility of diverse compounds by 2D-QSPR. J. Mol. Liq., 302, 112572 (2020).
+
+(3) https://codeocean.com/capsule/8848590/tree/v1
+
+(4) Delaney J.S. ESOL: Estimating Aqueous Solubility Directly from Molecular Structure. J. Chem. Inf. Model, 44(3), 1000-1005 (2004).
+
+(5)https://ysig.github.io/GraKeL/0.1a8/index.html
