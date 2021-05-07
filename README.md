@@ -14,10 +14,8 @@ A validation dataset was curated from a model by Fioressi et al.(2) was curated 
 
 # Descriptors
 The physiochemical descriptors, molecular weight (MolWT), lipophilcity (logP), aromatic proportion (AP) and rotatable bonds (RB) from the ESOL model (Delaney at el.) were used as a benchmark model. 
-Secondly, the structual binary descriptors MACCS and ECFP (r=3) were used. Both the structural and physiochemcal descriptors were built from RDkit. 
+Secondly, the structual binary descriptors MACCS and ECFP (r=3) were used. Both the structural and physiochemcal descriptors were built from RDkit. These were calculated an exported to a .csv file prior to model building. I've included the code to calculate these descriptors. 
 Finally, The graphical representation was built using Grakel(5). 
-
-As part of the repository, I have included the code used to generate these descriptors. 
 
 # Methods 
 The primary method used was SVM. The vectorial kernels explored were linear, RBF, polynomial (degree=1,2,3), sigmoid. The computation was done in house using scikit-learn, so applying them is relatively straight forward. The graphical kernels were slightly more technical; The kernel methods assessed here were random walk, shortest path, ordered dag decomposition, neighbourhood hashed, propagation, pyramid match, graph sampling, vertex histogram, Weisfeiler-Lehman subtree and Weisfeiler-Lehman optimal assignment. Computation of kernel matrix was done externally using grakel before being inputted into SVM moddel. 
