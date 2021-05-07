@@ -8,7 +8,7 @@ The Aqua-Solubility Modelling (AqSolMol) Repository contains the python code for
 The Repository is structured in the following way:
 
 # Datasets
-The AqSolDB(1) was used as the primary dataset. Further preprocessing was undertaken to remove extreme datapoints that were not relevant to drug discovery. Compounds with a MW > 1000 were removed, and only compounds within a -11 to +11 logP range were considered. 
+The AqSolDB(1) was used as the primary dataset. Further preprocessing was undertaken to remove extreme datapoints that were not relevant to drug discovery. Compounds with a molecular weight > 1000 were removed, and only compounds within a -11 to +11 logP range were considered. 
 
 A validation dataset was curated from a model by Fioressi et al.(2) was curated using the same algorimth used on the AqSolDB(3) to remove dupliates, validate the solubiltiy datapoints and gorup them based on their standard deviation.  
 
