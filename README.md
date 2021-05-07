@@ -1,5 +1,5 @@
 # AqSolMol
-The Aqua-Solubility Modelling (AqSolMol) Repository contains the python code for an undergraduate research project at the University of Nottingham on aqueous solubility modelling using vectorial and graphical kernels for SVM. For any queries, please contact either myself (Phil Wroe) or Joe Redshaw, the contact details for both can be found below:
+The Aqua-Solubility Modelling (AqSolMol) Repository contains the python code for an undergraduate research project at the University of Nottingham on aqueous solubility modelling using vectorial and graph kernels for SVM. For any queries, please contact either myself (Phil Wroe) or Joe Redshaw, the contact details for both can be found below:
 
   pcypw2@nottingham.ac.uk
   
