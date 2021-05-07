@@ -14,13 +14,13 @@ A validation dataset was curated from a model by Fioressi et al.(2) was curated 
 
 # Descriptors
 The physiochemical descriptors, molecular weight (MolWT), lipophilcity (logP), aromatic proportion (AP) and rotatable bonds (RB) from the ESOL model (Delaney at el.) were used as a benchmark model. 
-Secondly, the structual binary descriptors MACCS and ECFP (r=3) were used. Both the structural and physiochemcal descriptors were built from RDkit. These were calculated an exported to a .csv file prior to model building. I've included the code to calculate these descriptors. 
+Secondly, the structual binary descriptors MACCS key fingerprints and Extended Connectivity Fingerprints (ECFP) (r=3) were used. Both the structural and physiochemcal descriptors were built from RDkit. These were calculated an exported to a .csv file prior to model building. I've included the code to calculate these descriptors. 
 Finally, The graphical representation was built using Grakel(5). 
 
 # Methods 
 Recreating the ESOL MLR model formed part of the preliminary analysis of this project. The aims of this work was to firstly build a benchmark model to compare the SVR results against, but to also aid my decision making in creating a dataset that captured the extremities of chemical space in the context of aqueous solubility.  For more information on the exact methodology, please refer to results tab. 
 
-The primary method used was SVM. The vectorial kernels explored were linear, RBF, polynomial (degree=1,2,3), sigmoid. The computation was done in house using scikit-learn, so applying them is relatively straight forward. The graphical kernels were slightly more technical; The kernel methods assessed here were random walk, shortest path, ordered dag decomposition, neighbourhood hashed, propagation, pyramid match, graph sampling, vertex histogram, Weisfeiler-Lehman subtree and Weisfeiler-Lehman optimal assignment. Computation of kernel matrix was done externally using grakel before being inputted into SVM moddel. 
+The primary method used was support vector machines (SVM). The vectorial kernels explored were linear, RBF, polynomial (degree=1,2,3), sigmoid. The computation was done in house using scikit-learn, so applying them is relatively straight forward. The graphical kernels were slightly more technical; The kernel methods assessed here were random walk, shortest path, ordered dag decomposition, neighbourhood hashed, propagation, pyramid match, graph sampling, vertex histogram, Weisfeiler-Lehman subtree and Weisfeiler-Lehman optimal assignment. Computation of kernel matrix was done externally using grakel before being inputted into SVM moddel. 
 
 The SVM hypereparameters were optimised using a grid search 5-fold cross validation method and the model was built on a 80:20 split of the AqSolDB. Coefficient of determination and root mean squared error were calculated as part of the model evaluation. 
 
