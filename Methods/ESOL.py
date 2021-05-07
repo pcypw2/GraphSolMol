@@ -2,6 +2,8 @@
 ESOL Model predicts solubility directly from molecular structure with the use of logP, molecular weight (MW),
 rotatable bonds (RB) and aromatic proportion (AP).
 Delaney JS. J. Chem. Inf. Comput. Sci., 44(3), 1000–1005 (2004).
+
+Method was inspired by The Data Professor https://github.com/dataprofessor
 """
 import pandas as pd
 import numpy as np
