@@ -7,10 +7,12 @@ from sklearn.metrics import mean_squared_error, r2_score
 import pandas as pd
 from sklearn.svm import SVR
 from sklearn.model_selection import train_test_split
+
+#importing the datasets
 soly = pd.read_csv("AqSolDB_C.csv")
 val = pd.read_csv("validation dataset.csv")
 
-
+#Creating grakel graph
 def molg_from_smi(smiles):
     mol = Chem.MolFromSmiles(smiles)
     bond_idx = [(bond.GetBeginAtomIdx(), bond.GetEndAtomIdx()) for bond in mol.GetBonds()] + \
