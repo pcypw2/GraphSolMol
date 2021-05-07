@@ -2,7 +2,12 @@
 ##---------------------------------------------------------------------------------------------##
 ## Code was originally curated by Phyo Phyo Kyaw Zin, the link to the blog containing this is: ##
 ##                    https://drzinph.com/category/cheminformatics/                            ##
+##                                                                                             ##
+## Please note the output .csv file only includes SMILE strings and the bit descriptor, for    ##
+## ease I would modifiy the output csv file to include the names and solubiltiy of each data   ##
+## point                                                                                       ##
 ##---------------------------------------------------------------------------------------------##
+
 
 import pandas as pd
 from molvs import standardize_smiles
