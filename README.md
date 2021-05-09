@@ -30,7 +30,7 @@ I have attached a word file of my results for the project. As part of the projec
 
 To reference this any of the results included in this github, please use the following:
 
-Wroe P., Redshaw J., Hirst J. Evaluation of Vectorial and Graphical Kernel Method Performance on Aqueous Solubility Predictions. Nottingham J. Chem. (2021). 
+Wroe P., Redshaw J., Hirst J. Evaluation of Vectorial and Graph Kernel Method Performance on Aqueous Solubility Predictions. Nottingham J. Chem. (2021). 
 
 # References
 (1) Sorkun, M.C., Khetan, A. & Er, S. AqSolDB, a curated reference set of aqueous solubility and 2D descriptors for a diverse set of compounds. Sci Data 6, 143 ##(2019).
