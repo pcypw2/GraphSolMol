@@ -66,17 +66,18 @@ K_valr = np.nan_to_num(K_val)
 gsc = GridSearchCV(
     estimator=SVR(kernel='precomputed'),
     param_grid={
-       'C': [2**0, 2**1, 2**2, 2**3, 2**4, 2**5, 2**6, 2**7, 2**8],
-        'gamma':[2**-15, 2**-13, 2**-11, 2**-9, 2**-7, 2**-5, 2**-3, 2**-1, 2**1, 2**0, 2**1,
-                 2**3, 2**5]
-      },
-    cv=5, scoring='neg_root_mean_squared_error', verbose=2, n_jobs=-1)
+       'C': [2**-5, 2**-4, 2**-3, 2**-2, 2**-1, 2**0, 2**1, 2**2, 2**3, 2**4, 2**5],
+        'gamma': [2**-15, 2**-13, 2**-11, 2**-9, 2**-7, 2**-5, 2**-3, 2**-1, 2**1, 2**3,
+                  2**5],
+        'epsilon':[0.0001, 0.001, 0.01, 0.1, 1, 10, 100]
+        },
+    cv=5, scoring='neg_root_mean_squared_error', verbose=1, n_jobs=-1)
 sc_arr_y = y_train.ravel()
 grid_result = gsc.fit(K_train, y_train)
 best_params = grid_result.best_params_
 print(best_params)
 
-best_svr = SVR(kernel='precomputed', C= best_params["C"], gamma= best_params['gamma'])
+best_svr = SVR(kernel='precomputed', C= best_params["C"], gamma= best_params['gamma'], epsilon= best_params['epsilon'])
 
 best_svr.fit(K_train, y_train)
 
