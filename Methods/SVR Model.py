@@ -12,8 +12,8 @@ from sklearn.exceptions import ConvergenceWarning
 
 #Importing AqSol and validation dataset
 
-df = pd.read_csv("AqSolDB_C_ECFP6.csv")
-val = pd.read_csv("validation dataset_ECFP6.csv")
+df = pd.read_csv("AqSolDB_C_ESOL_Desc.csv")
+val = pd.read_csv("ESOL.csv")
 X = df.iloc[:, 3:]
 y = df.iloc[:, 2]
 val_X = val.iloc[:, 3:]
@@ -24,21 +24,19 @@ arr_y = np.array(y)
 arr_val_y = np.array(val_y)
 narr_y = arr_y.reshape(-1, 1)
 narr_y_val = arr_val_y.reshape(-1,1)
+Y = narr_y.ravel()
+y_val = narr_y_val.ravel()
 
 #Preprocessing the data using standard scaler
 
 sc_X = StandardScaler()
-sc_y = StandardScaler()
 X_sc = sc_X.fit_transform(X)
-y_sc = sc_y.fit_transform(narr_y)
-
-
 X_val = sc_X.fit_transform(val_X)
-y_val = sc_y.fit_transform(narr_y_val)
+
 
 
 #Splitting the data into test and train
-X_train, X_test, y_train, y_test = train_test_split(X_sc, y_sc, train_size= 0.8,test_size=0.2, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(X_sc, Y, train_size= 0.8,test_size=0.2, random_state=42)
 
 # Hyperparameter optimisation
 simplefilter("ignore", category= ConvergenceWarning)
@@ -46,23 +44,22 @@ ConvergenceWarning('ignore')
 gsc = GridSearchCV(
     estimator=SVR(kernel='rbf'),
     param_grid={
-       'C': [2**-5, 2**-4, 2**-3, 2**-2, 2**-1, 2**0, 2**1, 2**2, 2**3, 2**4, 2**5],
-        'gamma': [2**-15, 2**-13, 2**-11, 2**-9, 2**-7, 2**-5, 2**-3, 2**-1, 2**1, 2**3,
-                  2**5],
-        'epsilon':[0.0001, 0.001, 0.01, 0.1, 1, 10, 100]
-        },
-    cv=5, scoring='neg_root_mean_squared_error', verbose=1, n_jobs=-1)
+        'C': [2**-5, 2**-4, 2**-3, 2**-2, 2**-1, 2**0, 2**1, 2**2, 2**3, 2**4, 2**5, 2**6],
+        'gamma': [2**-15, 2**-13, 2**-11, 2**-9]
+        'epsilon': 0.001, 0.001, 0.01, 0.1, 1, 10},
+    cv=5, scoring='neg_root_mean_squared_error', verbose=0, n_jobs=1)
 sc_arr_y = y_train.ravel()
 grid_result = gsc.fit(X_train, sc_arr_y)
 best_params = grid_result.best_params_
 
-best_svr = SVR(kernel='rbf',  C= best_params['C'], gamma=best_params['gamma'], epsilon=best_params['epsilon'])
+best_svr = SVR(kernel='rbf',  C= best_params['C'], gamma=best_params['gamma'],epsilon = best_params['epsilon'])
 print(best_svr)
 
 
 from sklearn.model_selection import cross_validate
 
-rbf_svr = SVR(kernel='rbf', C= best_params['C'], gamma=best_params['gamma'], epsilon=best_params['epsilon'], verbose=0)
+rbf_svr = SVR(kernel='rbf', C= best_params['C'], gamma=best_params['gamma'], 
+              epsilon = best_params['epsilon'],verbose=0)
 scores = cross_validate(rbf_svr, X_train, sc_arr_y, scoring='neg_mean_squared_error', cv=5)
 print(scores)
 
