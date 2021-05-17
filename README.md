@@ -45,5 +45,5 @@ Wroe P., Redshaw J., Hirst J. Evaluation of Vectorial and Graph Kernel Method Pe
 
 (5) https://ysig.github.io/GraKeL/0.1a8/index.html
 
-(6) Llineas A. & Avdeef A. Solubility Challenge Revisited after Ten Years, with Multilab Shale-Flask Data, Using Tight (SD∼0.17 log) and Loose (SD ∼0.62 log) Test Sets. J. Chem. Inf. Model, 59(6), 3036-3040 (2019)
+(6) Llineas A. & Avdeef A. Solubility Challenge Revisited after Ten Years, with Multilab Shale-Flask Data, Using Tight (SD∼0.17 log) and Loose (SD ∼0.62 log) Test Sets. J. Chem. Inf. Model, 59(6), 3036-3040 (2019).
 
