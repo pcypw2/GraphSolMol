@@ -1,5 +1,5 @@
 # GraphSolMol
-The Graph Solubility Modelling (GraphSolMol) Repository contains the python code for an undergraduate research project at the University of Nottingham on aqueous solubility modelling using vectorial and graph kernels for SVM. For any queries, please contact either myself (Phil Wroe) or Joe Redshaw, the contact details for both can be found below:
+The Graph Solubility Modelling (GraphSolMol) Repository contains the python code for an undergraduate research project at the University of Nottingham. The focus was on  modelling aqueous solubility using vectorial and graph kernels applied to the support vector machine (SVM) machine learning algorithm. For any queries, please contact either myself (Phil Wroe) or Joe Redshaw, the contact details for both can be found below:
 
   pcypw2@nottingham.ac.uk
   
@@ -12,8 +12,10 @@ The AqSolDB(1) was used as the primary dataset. Further preprocessing was undert
 
 A validation dataset was curated from a model by Fioressi et al.(2) was underwent the same preprocessing same algorimth used on the AqSolDB(3) to remove dupliates, validate the solubiltiy datapoints and gorup them based on their reliability.  
 
+Finally the best performing models were used to predict the Solubility Challenge (6) 'tight' dataset (SD approx. 0.17) to understand how well the best performing models compared against the current state-of-the-art. 
+
 # Descriptors
-The physiochemical descriptors, molecular weight (MolWT), lipophilcity (logP), aromatic proportion (AP) and rotatable bonds (RB) from the ESOL model (Delaney at el.(4)) were used as a benchmark model. 
+The physiochemical descriptors, molecular weight (MolWT), lipophilcity (logP), aromatic proportion (AP) and rotatable bonds (RB) from the ESOL method (Delaney at el.(4)) were used as a benchmark model. 
 Secondly, the structual binary descriptors MACCS key fingerprints and Extended Connectivity Fingerprints (ECFP) (r=3) were used. Both the structural and physiochemcal descriptors were built from RDkit. These were calculated an exported to a .csv file prior to model building. I've included the code to calculate these descriptors. 
 Finally, The graphical representation was built using Grakel(5). 
 
@@ -26,9 +28,9 @@ The SVM hypereparameters were optimised using a grid search 5-fold cross validat
 
 
 # Results
-I have attached a word file of the results for the project. As part of the project, I was aiming to have gathered results into indefinite graph kernels, but due to time constraints this had to be suspended. Graphical methods appear to be more accurate at modelling solubility based of the predicted vs experimental plots I have attached which is great! There is still a lot of general noise using graphs, which can be attribued by the nature of the solubiltiy data being very sensitive to experimental conditions. If anyone would like to contribute to this project, either by applying a more accurate dataset or by exploring graph kernels in further detail, please feel free! I have included all my code and data for complete transparency and reproducability so it should be straight forward to gather results. Likewise, I don't doubt the code isn't fully optimised (please bare in mind I'm an undergraduate with limited coding experience), so if you have any issues or have any suggestions on how to improve it, then  please email myself (Phil Wroe) or my PhD mentor (Joe Redshaw). 
+I have attached a word file of the results for the project. Additional experimental was planned whihc looked into indefinite graph kernels, but due to time constraints this had to be suspended. Graphical methods appear to be more accurate at modelling solubility based of the predicted vs experimental plots I have attached which is great! There is still a lot of general noise using graphs, which can be attribued by the nature of the solubiltiy data being very sensitive to experimental conditions. If anyone would like to contribute to this project, either by applying a more accurate dataset or by exploring graph kernels in further detail, please feel free! I have included all my code and data for complete transparency and reproducability so it should be straight forward to gather results. Please bare in mind I'm an undergraduate with limited coding experience, so the scripts may not be fully optimised. If you have any issues or have any suggestions on how to improve the code, then  please email myself (Phil Wroe) or my PhD mentor (Joe Redshaw). 
 
-To reference this any of the results included in this github, please use the following:
+To reference this any of the results included in this github, please use the following citation:
 
 Wroe P., Redshaw J., Hirst J. Evaluation of Vectorial and Graph Kernel Method Performance on Aqueous Solubility Predictions. Nottingham J. Chem. (2021). 
 
@@ -41,4 +43,7 @@ Wroe P., Redshaw J., Hirst J. Evaluation of Vectorial and Graph Kernel Method Pe
 
 (4) Delaney J.S. ESOL: Estimating Aqueous Solubility Directly from Molecular Structure. J. Chem. Inf. Model, 44(3), 1000-1005 (2004).
 
-(5)https://ysig.github.io/GraKeL/0.1a8/index.html
+(5) https://ysig.github.io/GraKeL/0.1a8/index.html
+
+(6) Llineas A. & Avdeef A. Solubility Challenge Revisited after Ten Years, with Multilab Shale-Flask Data, Using Tight (SD∼0.17 log) and Loose (SD ∼0.62 log) Test Sets. J. Chem. Inf. Model, 59(6), 3036-3040 (2019)
+
